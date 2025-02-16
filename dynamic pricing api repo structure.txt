@@ -1,0 +1,41 @@
+dynamic-pricing-api/
+│── backend-go/               # Golang backend for real-time pricing
+│   ├── main.go               # Entry point for Golang API
+│   ├── config/               # Configuration files (e.g., database settings)
+│   │   ├── config.go
+│   ├── controllers/          # Business logic for API endpoints
+│   │   ├── pricing.go
+│   ├── models/               # Data structures and DB interactions
+│   │   ├── product.go
+│   ├── routes/               # API route definitions
+│   │   ├── routes.go
+│   ├── database/             # Database connection handling
+│   │   ├── db.go
+│   ├── utils/                # Utility functions (e.g., logging, helpers)
+│   │   ├── helpers.go
+│   ├── go.mod                # Go module dependencies
+│   ├── go.sum                # Go module checksums
+│   ├── Dockerfile            # Docker config for Go backend
+│
+│── ml-model-python/          # Python-based ML pricing model
+│   ├── app.py                # Flask/FastAPI server for ML model
+│   ├── model/                # ML training scripts and models
+│   │   ├── train.py
+│   │   ├── predict.py
+│   ├── requirements.txt      # Python dependencies
+│   ├── Dockerfile            # Docker config for Python backend
+│
+│── database/                 # SQL scripts and DB migrations
+│   ├── schema.sql            # PostgreSQL table schema
+│   ├── seed.sql              # Sample data for testing
+│
+│── tests/                    # Unit and integration tests
+│   ├── go-tests/             # Golang unit tests
+│   │   ├── pricing_test.go
+│   ├── python-tests/         # Python ML model tests
+│   │   ├── test_predict.py
+│
+│── .env                      # Environment variables (ignored in .gitignore)
+│── .gitignore                # Ignore unnecessary files
+│── README.md                 # Project documentation
+│── docker-compose.yml        # Docker Compose for local development
