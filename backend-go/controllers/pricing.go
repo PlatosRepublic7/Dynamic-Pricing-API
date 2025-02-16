@@ -46,3 +46,16 @@ func UpdateProductPrice(c *fiber.Ctx) error {
 
 	return c.JSON(product)
 }
+
+func DeleteProduct(c *fiber.Ctx) error {
+	id := c.Params("id")
+	var product models.Product
+
+	if err := database.DB.First(&product, id).Error; err != nil {
+		return c.Status(404).JSON(fiber.Map{"error": "Product not found"})
+	}
+
+	database.DB.Delete(&product)
+
+	return c.Status(200).JSON(product)
+}
